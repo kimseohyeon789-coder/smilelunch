@@ -1,0 +1,73 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  position: relative;
+  padding: 0.5vw;
+  background-color: #222;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+header h1 img {
+  /* border: 1px solid orange; */
+  display: block;
+  padding: 0.5vw;
+  /* transform: translateY(50%); */
+}
+
+header h1 .logo_w {
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  z-index: 1;
+}
+
+/* 우측 메뉴 */
+header div.gnb {
+  display: flex;
+  /* gap: 6rem; */
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid #ccc; */
+  width: 40vw;
+  color: #fff;
+}
+
+/* 서비스센터/신청, 고객센터 */
+header div.gnb ul {
+  display: flex;
+  gap: 3rem;
+  /* border: 1px solid blue; */
+}
+
+header div.gnb ul a {
+  display: inline-block;
+  height: 100%;
+}
+
+/* 개발자 센터 */
+header div.gnb div {
+  border: 1px solid #fff;
+  border-radius: 2vw;
+  padding: 0.5vw;
+}
+
+/* hover */
+header:hover .logo_w {
+  z-index: -1;
+}
+
+header:hover {
+  background-color: #fff;
+}
+
+header:hover .gnb {
+  color: blue;
+}
+
+header:hover div.gnb div {
+  border: 1px solid blue;
+}

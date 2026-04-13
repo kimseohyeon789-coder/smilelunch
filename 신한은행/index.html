@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4/6 신한은행</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+
+    <!-- visual -->
+    <div id="visual">
+      <ul class="panel">
+        <li class="bg1"></li>
+        <li class="bg2"></li>
+        <li class="bg3"></li>
+      </ul>
+      <div class="text_wrap">
+        <ul class="txt">
+          <li class="txt_one">
+            <h2>
+              "오늘도 감사히 <br> <span>잘 먹었습니다!"</span>
+            </h2>
+            <p>덕분에 성연이는 오늘 하루도 <br> 친구들과 따뜻한 밥을 먹을 수 있었습니다.</p>
+          </li>
+          <li class="txt_two">
+            <h2>저절로 <span>미소가 지어지는</span> <br>스마일 도시락</h2>
+            <p>아이들이 좋아하는 반찬으로 구성한 <br> 영양 만점, 맛 만점 도시락!</p>
+          </li>
+          <li class="txt_three">
+            <h2>"<span>아이들의 표정</span>을 보면<br />더 많이 가져다주고 싶죠."</h2>
+            <p>스마일 배달기사는 매일 <br> 스마일 런치를 들고 아이들에게 달려갑니다.</p>
+          </li>
+        </ul>
+        <ul class="control">
+          <li class="prev"><img src="img/btn_swiper_prev.svg" /></li>
+          <li>
+            <ul class="progress_bar">
+              <li>
+                <div></div>
+              </li>
+              <li>
+                <div></div>
+              </li>
+              <li>
+                <div></div>
+              </li>
+            </ul>
+          </li>
+          <li class="next"><img src="img/btn_swiper_prev.svg" /></li>
+        </ul>
+      </div>
+      <div class="scroll">
+        <p>SCROLL</p>
+        <div class="bar">
+            <div class="circle"></div>
+           
+        </div>
+      </div>
+    </div id="visual">
+
+    <script>
+
+
+let i = 0;
+
+// 공통 슬라이드 함수
+function slide() {
+    if (i == 2) {
+        i = 0;
+    } else {
+        i++;
+    }
+
+    $(".txt li").stop().fadeOut();
+    $(".txt li").eq(i).stop().fadeIn();
+
+    $(".progress_bar div").animate({"width":"0"}, 0);
+    $(".progress_bar div").eq(i).animate({"width":"3vw"}, 1000);
+}
+
+// 자동 실행
+let timer = setInterval(slide, 2000);
+
+
+// prev
+$(".prev").click(function () {
+    clearInterval(timer);
+
+    i--;
+    if (i < 0) i = 2;
+
+    $(".txt li").stop().fadeOut();
+    $(".txt li").eq(i).stop().fadeIn();
+
+    $(".progress_bar div").animate({"width":"0"}, 0);
+    $(".progress_bar div").eq(i).animate({"width":"3vw"}, 1000);
+
+    timer = setInterval(slide, 2000);
+});
+
+
+// next
+$(".next").click(function () {
+    clearInterval(timer);
+
+    i++;
+    if (i > 2) i = 0;
+
+    $(".txt li").stop().fadeOut();
+    $(".txt li").eq(i).stop().fadeIn();
+
+    $(".progress_bar div").animate({"width":"0"}, 0);
+    $(".progress_bar div").eq(i).animate({"width":"3vw"}, 1000);
+
+    timer = setInterval(slide, 2000);
+});
+
+    </script>
+  </body>
+</html>
