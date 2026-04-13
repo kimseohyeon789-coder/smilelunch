@@ -113,10 +113,10 @@ a {
     height: 90vh;
   }
 
-  .panel {
+  /* .panel {
     width: 100%;
     height: 90vh;
-  }
+  } */
 
   .txt {
     width: 100%;
@@ -144,11 +144,11 @@ a {
   }
 
   .txt_two {
-    background-image: url(../../img/6.png);
+    background-image: url(../img/6.png);
   }
 
   .txt_three {
-    background-image: url(../../img/19.png);
+    background-image: url(../img/19.png);
   }
 
   .txt li h2 {
