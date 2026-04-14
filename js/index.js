@@ -158,4 +158,18 @@ $(function () {
     $(".project_wrap ul li .txtbox").css({ opacity: "0" });
     $(".project_wrap ul li .txtbox").eq(i).css({ opacity: "1" });
   });
+
+  if (w <= 768) {
+    // sec03
+    $(window).on("scroll", function () {
+      let scroll = $(window).scrollTop();
+      // console.log(scroll);
+      // base = -200;
+
+      if (scroll >= 1000) {
+        $(".sec03").removeClass("ups");
+        $(".sec03").eq(0).addClass("ups");
+      }
+    });
+  }
 });
